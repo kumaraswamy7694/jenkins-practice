@@ -3,7 +3,7 @@ pipeline {
 
     options {
         // Timeout counter starts AFTER agent is allocated
-        timeout(time: 15, unit: 'SECONDS')  // Timeout is set for 10 seconds
+        timeout(time: 15, unit: 'SECONDS')  // Timeout is set for 15 seconds
     }
 
     environment { 
@@ -66,13 +66,16 @@ pipeline {
                 echo "Hello, ${params.PERSON}, nice to meet you."
             }
         }
-        stage('PROD Deploy')
-            when{
-                branch 'main'
+
+        // Corrected PROD Deploy stage
+        stage('PROD Deploy') {
+            when {
+                branch 'main'  // This stage will only run on the 'main' branch
             }
-            steps{
-                echo "deploying to PROD"
+            steps {
+                echo "Deploying to PROD"
             }
+        }
     }
 
     post {
