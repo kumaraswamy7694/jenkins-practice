@@ -42,15 +42,15 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Example') {
-            environment { 
-                AUTH = credentials('ssh-auth')
-            }
-            steps {
-                echo "Using SSH credentials: ${env.AUTH}"
-                sh 'printenv'
-            }
-        }
+        // stage('Example') {
+        //     environment { 
+        //         AUTH = credentials('ssh-auth')
+        //     }
+        //     steps {
+        //         echo "Using SSH credentials: ${env.AUTH}"
+        //         sh 'printenv'
+        //     }
+        // }
                stage('params') {
             steps {
                 echo "Hello ${params.PERSON}"
