@@ -7,7 +7,6 @@ pipeline {
                 echo 'Building..'
                 sh 'ls -ltr'
                 sh 'pwd'
-                cat 'Jenkins-pipeline1'
             }
         }
         stage('Test') {
