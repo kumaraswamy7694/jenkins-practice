@@ -47,6 +47,7 @@ pipeline {
                 AUTH = credentials('ssh-auth')
             }
             steps {
+                echo "Using SSH credentials: ${env.AUTH}"
                 sh 'printenv'
             }
         }
