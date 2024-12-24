@@ -4,6 +4,9 @@ pipeline {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 1, unit: 'SECONDS')
     }
+        environment { 
+        USER = 'kumaraswamy'
+    }
 
     stages {
         stage('Build') {
@@ -13,6 +16,7 @@ pipeline {
                 ls -ltr
                 pwd
                 echo "hi ra bullesh from web hook event"
+                printenv
                 '''
             }
         }
