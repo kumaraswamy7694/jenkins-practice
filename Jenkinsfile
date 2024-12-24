@@ -8,7 +8,7 @@ pipeline {
                 sh '''
                 ls -ltr
                 pwd
-                echo "Hello script"
+                echo "hi ra bullesh from web hook event"
                 '''
             }
         }
