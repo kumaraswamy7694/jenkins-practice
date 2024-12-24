@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Example') {
             environment { 
-                AN_ACCESS_KEY = credentials('ssh-auth') 
+                AN_ACCESS_KEY = credentials('my-predefined-secret-text') 
             }
             steps {
                 sh 'printenv'
