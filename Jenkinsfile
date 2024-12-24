@@ -4,6 +4,9 @@ pipeline {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 1, unit: 'SECONDS')
     }
+        triggers {
+        cron('*/2 * * * *')
+    }
         environment { 
         USER = 'kumaraswamy'
     }
